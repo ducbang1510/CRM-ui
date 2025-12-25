@@ -1,0 +1,113 @@
+{
+  "contact": {
+    "title": "Contacts",
+    "createNewContact": "Create new Contact",
+    "editContact": "Edit the Contact",
+    "contactDetails": "Contact details",
+    "searchByContactName": "Search by Contact name",
+    "table": {
+      "title": "List of Contacts",
+      "contactName": "Contact name",
+      "salutation": "Salutation",
+      "phone": "Phone number",
+      "email": "Email",
+      "organization": "Organization",
+      "dob": "Date of birth",
+      "address": "Address",
+      "leadSrc": "Lead source",
+      "assignedTo": "Assigned to",
+      "creator": "Creator",
+      "description": "Description",
+      "createdTime": "Created time",
+      "updatedTime": "Updated time"
+    }
+  },
+  "salesOrder": {
+    "title": "Sales Orders",
+    "createNewSalesOrder": "Create new Sales order",
+    "editSalesOrderInfo": "Edit the Sales order",
+    "salesOrderDetails": "Sales order details",
+    "listOfSalesOrder": "List of Sales orders",
+    "searchBySubject": "Search by Subject",
+    "table": {
+      "subject": "Subject",
+      "contactName": "Contact name",
+      "status": "Status",
+      "total": "Total",
+      "assignedTo": "Assigned to",
+      "creator": "Creator",
+      "description": "Description",
+      "createdTime": "Created time",
+      "updatedTime": "Updated time"
+    }
+  },
+  "user": {
+    "title": "Users",
+    "createNewUser": "Create new User",
+    "editUserInfo": "Edit the User",
+    "listOfUsers": "List of Users",
+    "userDetails": "User details",
+    "table": {
+      "name": "Name",
+      "username": "Username",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "admin": "Admin",
+      "active": "Active",
+      "email": "Email",
+      "phone": "Phone number",
+      "createdTime": "Created time"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard"
+  },
+  "shared": {
+    "modify": "Modify",
+    "delete": "Delete",
+    "deleteSelected": "Delete selected items",
+    "edit": "Edit",
+    "filters": "Filters",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "clear": "Clear",
+    "ok": "OK",
+    "apply": "Apply",
+    "back": "Back",
+    "submit": "Submit",
+    "create": "Create",
+    "changePassword": "Change password",
+    "login": "Login",
+    "register": "Register",
+    "signout": "Sign-out",
+    "language": "Language",
+    "actions": "Actions",
+    "noAccount": "Don't have an account?",
+    "missingValue": "-",
+    "noDataAvailable": "No Data Available",
+    "hint": {
+      "email": "Example: abc@gmail.com"
+    },
+    "error": {
+      "nameRequired": "*Name is required!",
+      "usernameRequired": "*Username is required!",
+      "passwordRequired": "*Password is required!",
+      "passwordMinLength": "*Password must be at least 6 characters!",
+      "passwordsMustMatch": "*Password and confirm password must match!",
+      "confirmPasswordRequired": "*Confirm password is required!",
+      "emailRequired": "*Email is required!",
+      "emailInvalid": "*Invalid email address!",
+      "phoneRequired": "*Phone number is required!",
+      "phoneInvalid": "*Invalid phone number!",
+      "contactNameRequired": "*Contact name is required",
+      "salutionRequired": "*Salutation is required",
+      "leadSrcRequired": "*Lead source is required",
+      "assignedToRequired": "*Assigned to is required",
+      "subjectRequired": "*Subject is required",
+      "statusRequired": "*Status is required",
+      "totalRequired": "*Total is required",
+      "totalInvalid": "*Total must be a number"
+    }
+  }
+}

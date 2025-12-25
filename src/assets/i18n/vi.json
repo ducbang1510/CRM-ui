@@ -1,0 +1,113 @@
+{
+  "contact": {
+    "title": "Liên hệ",
+    "createNewContact": "Tạo mới liên hệ",
+    "editContact": "Chỉnh sửa thông tin liên hệ",
+    "contactDetails": "Chi tiết thông tin liên hệ",
+    "searchByContactName": "Tìm kiếm theo tên liên hệ",
+    "table": {
+      "title": "Danh sách liên hệ",
+      "contactName": "Tên liên hệ",
+      "salutation": "Danh xưng",
+      "phone": "Số điện thoại",
+      "email": "Email",
+      "organization": "Tổ chức/Công ty",
+      "dob": "Ngày sinh",
+      "address": "Địa chỉ",
+      "leadSrc": "Nguồn khách hàng tiềm năng",
+      "assignedTo": "Phụ trách",
+      "creator": "Tạo bởi",
+      "description": "Mô tả thêm",
+      "createdTime": "Ngày tạo",
+      "updatedTime": "Ngày cập nhật"
+    }
+  },
+  "salesOrder": {
+    "title": "Đơn đặt hàng",
+    "createNewSalesOrder": "Tạo mới đơn đặt hàng",
+    "editSalesOrderInfo": "Chỉnh sửa đơn đặt hàng",
+    "salesOrderDetails": "Chi tiết đơn đặt hàng",
+    "listOfSalesOrder": "Danh sách đơn đặt hàng",
+    "searchBySubject": "Tìm kiếm theo nội dung",
+    "table": {
+      "subject": "Chủ đề",
+      "contactName": "Tên liên hệ",
+      "status": "Trạng thái",
+      "total": "Tổng số",
+      "assignedTo": "Phụ trách",
+      "creator": "Tạo bởi",
+      "description": "Mô tả thêm",
+      "createdTime": "Ngày tạo",
+      "updatedTime": "Ngày cập nhật"
+    }
+  },
+  "user": {
+    "title": "Quản lý nhân viên",
+    "createNewUser": "Tạo mới thông tin nhân viên",
+    "editUserInfo": "Chỉnh sửa thông tin nhân viên",
+    "listOfUsers": "Danh sách nhân viên",
+    "userDetails": "Chi tiết thông tin nhân viên",
+    "table": {
+      "name": "Họ tên",
+      "username": "Tên đăng nhập",
+      "password": "Mật khẩu",
+      "confirmPassword": "Nhập lại mật khẩu",
+      "admin": "Quản lý",
+      "active": "Hoạt động",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "createdTime": "Ngày tạo"
+    }
+  },
+  "dashboard": {
+    "title": "Bảng điều khiển"
+  },
+  "shared": {
+    "modify": "Chỉnh sửa",
+    "delete": "Xóa",
+    "deleteSelected": "Xóa các mục đã chọn",
+    "edit": "Chỉnh sửa",
+    "filters": "Bộ lọc",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "close": "Đóng",
+    "clear": "Xóa",
+    "ok": "OK",
+    "apply": "Áp dụng",
+    "back": "Quay lại",
+    "submit": "Gửi",
+    "create": "Tạo",
+    "changePassword": "Đổi mật khẩu",
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "signout": "Đăng xuất",
+    "language": "Ngôn ngữ",
+    "actions": "Hành động",
+    "noAccount": "Bạn chưa có tài khoản?",
+    "missingValue": "-",
+    "noDataAvailable": "Không có dữ liệu khả dụng",
+    "hint": {
+      "email": "Ví dụ: abc@gmail.com"
+    },
+    "error": {
+      "nameRequired": "*Tên là bắt buộc!",
+      "usernameRequired": "*Tên người dùng là bắt buộc!",
+      "passwordRequired": "*Mật khẩu là bắt buộc!",
+      "passwordMinLength": "*Mật khẩu phải có ít nhất 6 ký tự!",
+      "passwordsMustMatch": "*Mật khẩu và nhập lại mật khẩu phải khớp!",
+      "confirmPasswordRequired": "*Yêu cầu xác nhận mật khẩu!",
+      "emailRequired": "*Email là bắt buộc!",
+      "emailInvalid": "*Địa chỉ email không hợp lệ!",
+      "phoneRequired": "*Số điện thoại là bắt buộc!",
+      "phoneInvalid": "*Số điện thoại không hợp lệ!",
+      "contactNameRequired": "*Tên liên hệ là bắt buộc",
+      "salutionRequired": "*Danh xưng là bắt buộc",
+      "leadSrcRequired": "*Nguồn khách hàng tiềm năng là bắt buộc",
+      "assignedToRequired": "*Phụ trách là bắt buộc",
+      "subjectRequired": "*Nội dung là bắt buộc",
+      "statusRequired": "*Trạng thái là bắt buộc",
+      "totalRequired": "*Tổng số là bắt buộc",
+      "totalInvalid": "*Tổng số phải là chữ số"
+    }
+  }
+}

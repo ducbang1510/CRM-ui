@@ -1,0 +1,124 @@
+<div [id]="SALES_ORDER_ID.SALES_ORDER_DIALOG">
+  <h2 mat-dialog-title>
+    {{
+      this.data.action === "add"
+        ? ("salesOrder.createNewSalesOrder" | translate)
+        : ("salesOrder.editSalesOrderInfo" | translate)
+    }}
+  </h2>
+  <mat-dialog-content>
+    <form
+      class="mx-3 my-4"
+      [formGroup]="salesOrderForm"
+      [id]="
+        this.data.action === 'add'
+          ? SALES_ORDER_ID.SALES_ORDER_FORM_CREATE
+          : SALES_ORDER_ID.SALES_ORDER_FORM_EDIT
+      "
+    >
+      <div class="row">
+        <mat-form-field class="col-8" appearance="outline">
+          <mat-label>
+            {{ "salesOrder.table.subject" | translate }}
+          </mat-label>
+          <input matInput formControlName="subject" />
+          @if (salesOrderForm.controls['subject'].errors?.['required']) {
+          <mat-error>
+            {{ "shared.error.subjectRequired" | translate }}
+          </mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field class="col-4" appearance="outline">
+          <mat-label>
+            {{ "salesOrder.table.status" | translate }}
+          </mat-label>
+          <mat-select formControlName="status">
+            <mat-option *ngFor="let stt of statusNames" [value]="stt">
+              {{ stt }}
+            </mat-option>
+          </mat-select>
+          @if (salesOrderForm.controls['status'].errors?.['required']) {
+          <mat-error>
+            {{ "shared.error.statusRequired" | translate }}
+          </mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="row my-3">
+        <mat-form-field class="col-4" appearance="outline">
+          <mat-label>
+            {{ "salesOrder.table.contactName" | translate }}
+          </mat-label>
+          <mat-select formControlName="contactName">
+            <mat-option *ngFor="let contact of contacts" [value]="contact">
+              {{ contact }}
+            </mat-option>
+          </mat-select>
+          @if (salesOrderForm.controls['contactName'].errors?.['required']) {
+          <mat-error>
+            {{ "shared.error.contactNameRequired" | translate }}
+          </mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field
+          class="col-4"
+          appearance="outline"
+          *ngIf="assignedToUsers && assignedToUsers.length > 0"
+        >
+          <mat-label>
+            {{ "salesOrder.table.assignedTo" | translate }}
+          </mat-label>
+          <mat-select formControlName="assignedTo">
+            <mat-option *ngFor="let user of assignedToUsers" [value]="user">
+              {{ user }}
+            </mat-option>
+          </mat-select>
+          @if (salesOrderForm.controls['assignedTo'].errors?.['required']) {
+          <mat-error>
+            {{ "shared.error.assignedToRequired" | translate }}
+          </mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field class="col-4" appearance="outline">
+          <mat-label>
+            {{ "salesOrder.table.total" | translate }}
+          </mat-label>
+          <input matInput formControlName="total" />
+          @if (salesOrderForm.controls['total'].errors?.['required']) {
+          <mat-error>
+            {{ "shared.error.totalRequired" | translate }}
+          </mat-error>
+          } @if (salesOrderForm.controls['total'].errors?.['pattern']) {
+          <mat-error>
+            {{ "shared.error.totalInvalid" | translate }}
+          </mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="row my-3">
+        <mat-form-field appearance="outline" class="col-12">
+          <mat-label>
+            {{ "salesOrder.table.description" | translate }}
+          </mat-label>
+          <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close [id]="SALES_ORDER_ID.BUTTON_CANCEL">
+      {{ "shared.cancel" | translate }}
+    </button>
+    <button
+      mat-button
+      cdkFocusInitial
+      (click)="!salesOrderForm.invalid && onSubmit()"
+      [ngClass]="salesOrderForm.invalid ? 'btn-disabled' : 'btn-primary'"
+      [id]="SALES_ORDER_ID.BUTTON_SUBMIT"
+    >
+      {{ "shared.submit" | translate }}
+    </button>
+  </mat-dialog-actions>
+</div>

@@ -1,0 +1,127 @@
+<div [id]="SALES_ORDER_ID.SALES_ORDER_DETAILS">
+  <h2 mat-dialog-title>
+    {{ "salesOrder.salesOrderDetails" | translate }}
+  </h2>
+  <mat-dialog-content>
+    <mat-list role="list" [id]="SALES_ORDER_ID.SALES_ORDER_DETAILS_LIST">
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold float-start">
+          {{ "salesOrder.table.subject" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ salesOrder?.subject || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold float-start">
+          {{ "salesOrder.table.contactName" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ salesOrder?.contactName || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold loat-start">
+          {{ "salesOrder.table.status" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ salesOrder?.status || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold loat-start">
+          {{ "salesOrder.table.total" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ salesOrder?.total || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold loat-start">
+          {{ "salesOrder.table.assignedTo" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ salesOrder?.assignedTo || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold loat-start">
+          {{ "salesOrder.table.creator" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ salesOrder?.creator || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold loat-start">
+          {{ "salesOrder.table.description" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ salesOrder?.description || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold loat-start">
+          {{ "salesOrder.table.createdTime" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{
+            (salesOrder?.createdTime | date : "medium") ||
+              ("shared.missingValue" | translate)
+          }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center border-none"
+      >
+        <span class="text-bold loat-start">
+          {{ "salesOrder.table.updatedTime" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{
+            (salesOrder?.updatedTime | date : "medium") ||
+              ("shared.missingValue" | translate)
+          }}
+        </span>
+      </mat-list-item>
+    </mat-list>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close [id]="SALES_ORDER_ID.BUTTON_CLOSE">
+      {{ "shared.close" | translate }}
+    </button>
+  </mat-dialog-actions>
+</div>

@@ -1,0 +1,105 @@
+<app-progress-spinner></app-progress-spinner>
+
+<!-- Navigation bar -->
+<mat-toolbar class="navbar">
+  <div class="logo d-flex align-items-center justify-content-center">
+    <mat-icon svgIcon="crm"></mat-icon>
+  </div>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menu" [id]="HOME_ID.BUTTON_MENU">
+      <mat-icon> menu </mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button
+        mat-menu-item
+        [matMenuTriggerFor]="language"
+        [id]="HOME_ID.BUTTON_LANGUAGE"
+      >
+        {{ "shared.language" | translate }}
+      </button>
+      <button
+        mat-menu-item
+        (click)="openChangePwdDialog()"
+        [id]="HOME_ID.BUTTON_CHANGE_PASSWORD"
+      >
+        {{ "shared.changePassword" | translate }}
+      </button>
+      <button mat-menu-item (click)="signout()" [id]="HOME_ID.BUTTON_SIGN_OUT">
+        {{ "shared.signout" | translate }}
+      </button>
+    </mat-menu>
+    <mat-menu #language="matMenu">
+      <div *ngFor="let language of translate.getLangs()">
+        <button
+          mat-menu-item
+          (click)="switchLanguage(language)"
+          [id]="HOME_ID.BUTTON_SWITCH_LANGUAGE"
+        >
+          {{ language }}
+        </button>
+      </div>
+    </mat-menu>
+  </div>
+</mat-toolbar>
+
+<!-- Left sidebar menu -->
+<mat-sidenav-container id="app-home-sidenav-container">
+  <mat-sidenav mode="side" opened="true">
+    <button
+      mat-button
+      [id]="HOME_ID.MENU_DASHBOARD"
+      class="menu-button w-100 py-1 ps-4 d-flex justify-content-start"
+      routerLink="/dashboard"
+      routerLinkActive="active"
+    >
+      <mat-icon> dashboard </mat-icon>
+      <span>
+        {{ "dashboard.title" | translate }}
+      </span>
+    </button>
+    <button
+      mat-button
+      [id]="HOME_ID.MENU_CONTACTS"
+      class="menu-button w-100 py-1 ps-4 d-flex justify-content-start"
+      routerLink="/contact"
+      routerLinkActive="active"
+    >
+      <mat-icon> contact_page </mat-icon>
+      <span>
+        {{ "contact.title" | translate }}
+      </span>
+    </button>
+    <button
+      mat-button
+      [id]="HOME_ID.MENU_SALES_ORDERS"
+      class="menu-button w-100 py-1 ps-4 d-flex justify-content-start"
+      routerLink="/sales-order"
+      routerLinkActive="active"
+    >
+      <mat-icon> real_estate_agent </mat-icon>
+      <span>
+        {{ "salesOrder.title" | translate }}
+      </span>
+    </button>
+
+    <button
+      mat-button
+      [id]="HOME_ID.MENU_USERS"
+      class="menu-button w-100 py-1 ps-4 d-flex justify-content-start"
+      routerLink="/user"
+      routerLinkActive="active"
+      *ngIf="currentUser?.isAdmin"
+    >
+      <mat-icon> manage_accounts </mat-icon>
+      <span>
+        {{ "user.title" | translate }}
+      </span>
+    </button>
+  </mat-sidenav>
+  <!-- main content -->
+  <mat-sidenav-content>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

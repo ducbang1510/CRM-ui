@@ -1,0 +1,50 @@
+<div id="user-wrapper">
+  <div class="row mx-4 my-3">
+    <div>
+      <h2 class="float-start">
+        {{ "user.title" | translate }}
+      </h2>
+    </div>
+    <div class="col-12 mb-3">
+      <h3 class="float-start my-1">
+        {{ "user.listOfUsers" | translate }}
+      </h3>
+      <div class="float-end d-flex align-items-center gap-2">
+        <button
+          mat-button
+          class="btn-primary"
+          [id]="USER_ID.BUTTON_CREATE"
+          (click)="openUserDialog('add')"
+        >
+          <mat-icon>add</mat-icon>
+          <span>
+            {{ "user.createNewUser" | translate }}
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="col-12 user-list mb-3">
+      <app-table
+        [displayedColumns]="displayedColumns"
+        [dataSource]="dataSource"
+        [headerColumns]="headerColumns"
+        [tableId]="USER_ID.USER_LIST"
+        [totalRecords]="totalRecords"
+      >
+      </app-table>
+      <app-no-data-found
+        *ngIf="totalRecords === 0"
+        [panelId]="USER_ID.USER_LIST_NOT_FOUND"
+      ></app-no-data-found>
+    </div>
+    <div [hidden]="totalRecords === 0">
+      <mat-paginator
+        [id]="USER_ID.USER_LIST_PAGINATION"
+        #userPaginator
+        [length]="totalRecords"
+        [pageSize]="5"
+        [pageSizeOptions]="[5, 10, 20, 30, 40, 50]"
+      ></mat-paginator>
+    </div>
+  </div>
+</div>

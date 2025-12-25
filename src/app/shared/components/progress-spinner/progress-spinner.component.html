@@ -1,0 +1,9 @@
+<div class="loadingContainer" *ngIf="loadingService.isVisible() | async">
+  <div class="overlay">
+    <mat-progress-spinner
+      [id]="progressSpinnerId"
+      diameter="50"
+      mode="indeterminate"
+    ></mat-progress-spinner>
+  </div>
+</div>

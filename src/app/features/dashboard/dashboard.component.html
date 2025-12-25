@@ -1,0 +1,65 @@
+<div [id]="DASHBOARD_ID.DASHBOARD_MAIN_SECTION">
+  <div class="row mx-4 my-3">
+    <div class="col-12">
+      <h2 class="float-start">
+        {{ "dashboard.title" | translate }}
+      </h2>
+    </div>
+    <div class="col-6">
+      <mat-card
+        appearance="outlined"
+        [id]="DASHBOARD_ID.DASHBOARD_CARD_CONTACT"
+      >
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>
+              {{ "contact.title" | translate }}
+            </mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <div id="contact-chart-wrapper">
+            <canvas
+              #contactChart
+              baseChart
+              class="mx-auto"
+              [type]="'pie'"
+              [datasets]="contactPieChartDatasets"
+              [labels]="contactPieChartLabels"
+              [options]="contactPieChartOptions"
+            >
+            </canvas>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-6">
+      <mat-card
+        appearance="outlined"
+        [id]="DASHBOARD_ID.DASHBOARD_CARD_SALES_ORDER"
+      >
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>
+              {{ "salesOrder.title" | translate }}
+            </mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <div id="sales-order-chart-wrapper">
+            <canvas
+              #salesOrderChart
+              baseChart
+              class="mx-auto"
+              [type]="'pie'"
+              [datasets]="salesOrderPieChartDatasets"
+              [labels]="salesOrderPieChartLabels"
+              [options]="salesOrderPieChartOptions"
+            >
+            </canvas>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

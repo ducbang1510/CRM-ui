@@ -1,0 +1,46 @@
+$primary: #006a71;
+$secondary: #48a6a7;
+$tertiary: #9acbd0;
+$danger: rgb(215, 0, 21);
+$warning: rgb(255, 204, 0);
+$success: rgb(36, 138, 61);
+$info: rgb(50, 173, 230);
+$grey: #f2efe7;
+$grey-2: rgb(229, 229, 234);
+$grey-3: rgb(242, 242, 247);
+$grey-text: #8e8e93;
+$dark: #031c1d;
+$black80: rgba(3, 28, 29, 0.8);
+$black50: rgba(3, 28, 29, 0.5);
+$black20: rgba(3, 28, 29, 0.2);
+$light: #ebebf0;
+$pure-white: #ffffff;
+$bg-two-color-gradient: linear-gradient(
+  to left top,
+  #f2efe7,
+  #e1e6d8,
+  #caddcf,
+  #b1d5cd,
+  #9acbd0
+);
+$bg-three-color-gradient: linear-gradient(
+  to left top,
+  #f2efe7,
+  #e6e8db,
+  #d6e2d3,
+  #c4dbce,
+  #b1d5cd,
+  #a3cfca,
+  #95c9c7,
+  #87c2c6,
+  #78bbbe,
+  #69b4b7,
+  #59adaf,
+  #48a6a7
+);
+$bg-table-header: #f0df78;
+$bg-table-header-2: rgba(72, 166, 167, 0.1);
+$mat-table-border-color: #f0cf78;
+$mat-cell-hover: rgba(240, 223, 120, 0.1);
+$mat-cell-hover-2: rgba(20, 106, 113, 0.1);
+$mat-cell-hover-3: rgba(154, 203, 208, 0.1);

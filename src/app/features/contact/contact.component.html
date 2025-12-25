@@ -1,0 +1,182 @@
+<div [id]="CONTACT_ID.CONTACT_MAIN_SECTION">
+  <div class="row mx-4 my-3">
+    <div class="col-12">
+      <h2 class="float-start">
+        {{ "contact.title" | translate }}
+      </h2>
+    </div>
+    <div class="col-12 mb-3">
+      <h3 class="float-start my-1">
+        {{ "contact.table.title" | translate }}
+      </h3>
+      <div class="float-end d-flex align-items-center gap-2">
+        <button
+          mat-button
+          [disabled]="contactIdsChecked.length === 0"
+          [ngClass]="
+            contactIdsChecked.length === 0 ? 'btn-disabled' : 'btn-danger'
+          "
+          (click)="contactIdsChecked.length !== 0 && onBulkDeleteContacts()"
+          [id]="
+            contactIdsChecked.length === 0
+              ? CONTACT_ID.BUTTON_DELETE
+              : CONTACT_ID.BUTTON_DELETE_MULTIPLE
+          "
+        >
+          <mat-icon>delete</mat-icon>
+          <span>
+            {{
+              contactIdsChecked.length === 0
+                ? ("shared.delete" | translate)
+                : ("shared.deleteSelected" | translate)
+            }}
+          </span>
+        </button>
+
+        <button
+          class="btn-primary"
+          mat-button
+          (click)="openFormDialog('add')"
+          [id]="CONTACT_ID.BUTTON_CREATE"
+        >
+          <mat-icon>add</mat-icon>
+          <span>{{ "contact.createNewContact" | translate }}</span>
+        </button>
+      </div>
+    </div>
+    <div class="col-12 mb-3 search-field">
+      <mat-form-field appearance="outline" [id]="CONTACT_ID.INPUT_SEARCH">
+        <mat-icon>search</mat-icon>
+        <input
+          matInput
+          placeholder="{{ 'contact.searchByContactName' | translate }}"
+          [formControl]="searchText"
+        />
+        <mat-icon
+          class="pointer icon-clear"
+          [matTooltip]="'shared.clear' | translate"
+          (click)="resetData()"
+        >
+          clear
+        </mat-icon>
+      </mat-form-field>
+    </div>
+    <div class="col-12 contacts-list mb-3">
+      <table
+        mat-table
+        [dataSource]="dataSource"
+        class="mat-elevation-z8"
+        [class.no-data-table]="totalRecords === 0"
+        [id]="CONTACT_ID.CONTACT_LIST"
+      >
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef class="text-center"></th>
+          <td class="text-center" mat-cell *matCellDef="let element">
+            <input
+              type="checkbox"
+              [value]="element.pk"
+              (change)="onCheckboxChecked($event)"
+            />
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="contactName">
+          <th mat-header-cell *matHeaderCellDef class="text-center">
+            {{ "contact.table.contactName" | translate }}
+          </th>
+          <td
+            class="text-center pointer"
+            mat-cell
+            *matCellDef="let element"
+            (click)="openContactDetailsDialog(element.pk)"
+          >
+            {{ element.contactName }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="salutation">
+          <th mat-header-cell *matHeaderCellDef class="text-center">
+            {{ "contact.table.salutation" | translate }}
+          </th>
+          <td class="text-center" mat-cell *matCellDef="let element">
+            {{ element.salutation }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="leadSrc">
+          <th mat-header-cell *matHeaderCellDef class="text-center">
+            {{ "contact.table.leadSrc" | translate }}
+          </th>
+          <td class="text-center" mat-cell *matCellDef="let element">
+            {{ element.leadSrc }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="assignedTo">
+          <th mat-header-cell *matHeaderCellDef class="text-center">
+            {{ "contact.table.assignedTo" | translate }}
+          </th>
+          <td class="text-center" mat-cell *matCellDef="let element">
+            {{ element.assignedTo }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="createdTime">
+          <th mat-header-cell *matHeaderCellDef class="text-center">
+            {{ "contact.table.createdTime" | translate }}
+          </th>
+          <td class="text-center" mat-cell *matCellDef="let element">
+            {{ element.createdTime | date : "medium" }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="updatedTime">
+          <th mat-header-cell *matHeaderCellDef class="text-center">
+            {{ "contact.table.updatedTime" | translate }}
+          </th>
+          <td class="text-center" mat-cell *matCellDef="let element">
+            {{ element.updatedTime | date : "medium" }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef class="text-center">
+            {{ "shared.actions" | translate }}
+          </th>
+          <td class="text-center" mat-cell *matCellDef="let element">
+            <mat-icon
+              class="text-warning pointer mx-1"
+              [matTooltip]="'shared.edit' | translate"
+              (click)="openFormDialog('edit', element.pk)"
+            >
+              edit
+            </mat-icon>
+            <mat-icon
+              class="text-danger pointer mx-1"
+              [matTooltip]="'shared.delete' | translate"
+              (click)="onDelete(element.pk, element.contactName)"
+            >
+              delete
+            </mat-icon>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <app-no-data-found
+        *ngIf="totalRecords === 0"
+        [panelId]="CONTACT_ID.CONTACT_LIST_NOT_FOUND"
+      ></app-no-data-found>
+    </div>
+    <div [hidden]="totalRecords === 0">
+      <mat-paginator
+        [id]="CONTACT_ID.CONTACT_LIST_PAGINATION"
+        #contactPaginator
+        [length]="totalRecords"
+        [pageSize]="5"
+        [pageSizeOptions]="[5, 10, 20, 30, 40, 50]"
+      ></mat-paginator>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,169 @@
+/* You can add global styles to this file, and also import other style files */
+@use "./base/variables" as *;
+@use "./base/font" as *;
+@use "./base/table" as *;
+@use "./base/typography" as *;
+@use "./base/form" as *;
+@use "./base/snackbar" as *;
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+
+/* Expansion Panel custom stylings */
+.mat-mdc-expansion-panel {
+  .mat-mdc-expansion-panel-header {
+    height: 48px !important;
+    .mat-mdc-expansion-panel-header-title {
+      h3 {
+        margin-top: 8px;
+      }
+    }
+  }
+  .mat-mdc-expansion-panel-content {
+    border-top: 1px solid $black20;
+    .mat-mdc-expansion-panel-body {
+      padding: 0;
+    }
+  }
+}
+
+/* Card custom stylings */
+.mat-mdc-card {
+  padding: 0 !important;
+  .mat-mdc-card-header {
+    height: 48px;
+    .mat-mdc-card-header-text {
+      .mat-mdc-card-title {
+        margin-top: 12px;
+      }
+    }
+  }
+  .mat-mdc-card-content {
+    border-top: 1px solid $black20;
+    border-bottom: 1px solid $black20;
+    margin-bottom: 0;
+  }
+  .mat-mdc-card-actions {
+    height: 48px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Slide toggle custom stylings */
+.mdc-switch__track {
+  height: 30px !important;
+}
+.mat-mdc-slide-toggle .mdc-switch__handle:has(.mdc-switch__icons) {
+  width: 22px !important;
+  height: 22px !important;
+}
+
+/* Define standard colors */
+.btn-primary {
+  background-color: $primary !important;
+  color: $light !important;
+}
+.btn-secondary {
+  background-color: $secondary !important;
+  color: $light !important;
+}
+.btn-tertiary {
+  background-color: $tertiary !important;
+  color: $dark !important;
+}
+.btn-grey {
+  background-color: $light !important;
+  color: $dark !important;
+}
+.btn-success {
+  background-color: $success !important;
+  color: $pure-white !important;
+}
+.btn-danger {
+  background-color: $danger !important;
+  color: $pure-white !important;
+}
+.btn-warning {
+  background-color: $warning !important;
+  color: $dark !important;
+}
+.btn-info {
+  background-color: $info !important;
+  color: $pure-white !important;
+}
+.btn-disabled {
+  background-color: $black20 !important;
+  color: $dark !important;
+}
+.bg-success {
+  background-color: $success !important;
+}
+.bg-danger {
+  background-color: $danger !important;
+}
+.bg-warning {
+  background-color: $warning !important;
+}
+.bg-info {
+  background-color: $info !important;
+}
+.bg-disabled {
+  background-color: $black20 !important;
+}
+.text-danger {
+  color: $danger !important;
+}
+.text-warning {
+  color: $warning !important;
+}
+.text-white {
+  color: $pure-white !important;
+}
+.text-black {
+  color: $dark !important;
+}
+.text-info {
+  color: $info !important;
+}
+.text-grey {
+  color: $grey-text !important;
+}
+.pointer {
+  cursor: pointer;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-bold {
+  font-weight: 600;
+}
+
+mat-progress-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.mat-mdc-list-item {
+  border-bottom: 1px solid $grey-2;
+}
+.border-none {
+  border: unset !important;
+}

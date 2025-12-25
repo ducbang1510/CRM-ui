@@ -1,0 +1,178 @@
+<div [id]="CONTACT_ID.CONTACT_DETAILS">
+  <h2 mat-dialog-title>
+    {{ "contact.contactDetails" | translate }}
+  </h2>
+  <mat-dialog-content>
+    <mat-list role="list" [id]="CONTACT_ID.CONTACT_DETAILS_LIST">
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold float-start">
+          {{ "contact.table.contactName" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ contact?.contactName || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold float-start">
+          {{ "contact.table.salutation" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ contact?.salutation || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold loat-start">
+          {{ "contact.table.phone" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ contact?.mobilePhone || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold loat-start">
+          {{ "contact.table.email" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ contact?.email || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold loat-start">
+          {{ "contact.table.organization" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ contact?.organization || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold loat-start">
+          {{ "contact.table.dob" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{
+            (contact?.dob | date : "mediumDate") ||
+              ("shared.missingValue" | translate)
+          }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold loat-start">
+          {{ "contact.table.leadSrc" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ contact?.leadSrc || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold loat-start">
+          {{ "contact.table.assignedTo" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ contact?.assignedTo || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold loat-start">
+          {{ "contact.table.creator" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ contact?.creator || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold loat-start">
+          {{ "contact.table.address" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ contact?.address || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold loat-start">
+          {{ "contact.table.description" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ contact?.description || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold loat-start">
+          {{ "contact.table.createdTime" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{
+            (contact?.createdTime | date : "medium") ||
+              ("shared.missingValue" | translate)
+          }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center border-none"
+      >
+        <span class="text-bold loat-start">
+          {{ "contact.table.updatedTime" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{
+            (contact?.updatedTime | date : "medium") ||
+              ("shared.missingValue" | translate)
+          }}
+        </span>
+      </mat-list-item>
+    </mat-list>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close [id]="CONTACT_ID.BUTTON_CLOSE">
+      {{ "shared.close" | translate }}
+    </button>
+  </mat-dialog-actions>
+</div>

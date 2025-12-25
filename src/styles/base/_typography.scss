@@ -1,0 +1,55 @@
+@use "./variables" as *;
+@use "./font" as *;
+
+/* 
+This typography stylings refer to Atlassian's typography design
+Document can be found at https://atlassian.design/foundations/typography
+*/
+body {
+  margin: 0;
+  font-family: "Atlassian Sans", sans-serif;
+}
+h1 {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 56px;
+  font-family: "Atlassian Sans";
+  color: $dark;
+}
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+  font-family: "Atlassian Sans";
+  color: $dark;
+}
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Atlassian Sans";
+  color: $dark;
+}
+h4 {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Atlassian Sans";
+  color: $dark;
+}
+h5 {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Atlassian Sans";
+  color: $dark;
+}
+h6 {
+  font-size: 14px;
+  font-weight: 300;
+  font-family: "Atlassian Sans";
+  color: $dark;
+}
+p,
+span,
+label {
+  font-size: 14px;
+  font-family: "Atlassian Sans";
+}

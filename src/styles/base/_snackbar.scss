@@ -1,0 +1,59 @@
+@use "./variables" as *;
+
+.mat-mdc-snack-bar-container {
+  border-radius: 6px;
+  .mat-mdc-snackbar-surface {
+    height: 52px;
+    background-color: $pure-white !important;
+    .app-snackbar-wrapper {
+      .app-snackbar-label {
+        color: $dark;
+        font-size: 15px;
+        font-weight: 500;
+      }
+      .app-snackbar-message {
+        color: $grey-text;
+      }
+    }
+  }
+}
+.green-success-snackbar {
+  border-left: 6px solid $success;
+  .mat-mdc-snackbar-surface {
+    .mat-mdc-snack-bar-label {
+      .mat-icon {
+        color: $success;
+      }
+    }
+  }
+}
+.yellow-warning-snackbar {
+  border-left: 6px solid $warning;
+  .mat-mdc-snackbar-surface {
+    .mat-mdc-snack-bar-label {
+      .mat-icon {
+        color: $warning;
+      }
+    }
+  }
+}
+.red-error-snackbar {
+  border-left: 6px solid $danger;
+  .mat-mdc-snackbar-surface {
+    .mat-mdc-snack-bar-label {
+      .mat-icon {
+        color: $danger;
+      }
+    }
+  }
+}
+.blue-error-snackbar {
+  border-left: 6px solid $info;
+  .mat-mdc-snackbar-surface {
+    .mat-mdc-snack-bar-label {
+      .mat-icon {
+        color: $info;
+      }
+    }
+  }
+}

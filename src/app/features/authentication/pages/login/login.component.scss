@@ -1,0 +1,18 @@
+@use "../../../../../styles/base/variables" as *;
+
+.authen-page-wrapper {
+  &#auth-loginPage {
+    background: #f2efe7;
+    background: $bg-three-color-gradient;
+    width: 100vw;
+    height: 100vh;
+  
+    .login-form-wrapper {
+      background-color: #ffffff;
+      z-index: 2;
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+      border-radius: 10px;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@use "../../../styles/base/variables" as *;
+
+.navbar {
+  margin: 0;
+  padding: 0;
+  height: 48px;
+  background-color: $tertiary;
+  .logo {
+    width: 200px;
+    background-color: $primary;
+    height: 100%;
+    font-family: "Atlassian Sans";
+    .mat-icon {
+      width: 200px;
+      height: 110px;
+      ::ng-deep svg {
+        display: flex !important;
+      }
+    }
+  }
+}
+
+#app-home-sidenav-container {
+  &.mat-sidenav-container {
+    height: calc(100vh - 48px);
+    margin: 0 auto;
+    mat-sidenav {
+      width: 200px;
+      border: none;
+      border-radius: 0;
+      background-color: $secondary;
+      color: white;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      text-align: center;
+    }
+    mat-sidenav-content {
+      font-size: 2rem;
+      background-color: $grey-3;
+    }
+    .menu-button {
+      color: $grey;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<div
+  [id]="AUTH_ID.AUTH_LOGIN_PAGE"
+  class="authen-page-wrapper d-flex justify-content-center align-items-center"
+>
+  <div
+    class="login-form-wrapper px-4 py-3 d-flex flex-column justify-content-center"
+  >
+    <h2 class="mx-auto text-black">WELCOME TO CRM APP!</h2>
+    <div class="mt-3 d-flex justify-content-center">
+      <button
+        [id]="AUTH_ID.BUTTON_LOGIN"
+        class="mb-3 btn-primary"
+        mat-button
+        mat-raised-button
+        color="primary"
+        (click)="loginWithOAuth2()"
+      >
+        Login here
+      </button>
+    </div>
+  </div>
+</div>

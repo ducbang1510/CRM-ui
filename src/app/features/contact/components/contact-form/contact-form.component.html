@@ -1,0 +1,172 @@
+<div [id]="CONTACT_ID.CONTACT_DIALOG">
+  <h2 mat-dialog-title>
+    {{
+      this.data.action === "add"
+        ? ("contact.createNewContact" | translate)
+        : ("contact.editContact" | translate)
+    }}
+  </h2>
+  <mat-dialog-content>
+    <form
+      [id]="
+        this.data.action === 'add'
+          ? CONTACT_ID.CONTACT_FORM_CREATE
+          : CONTACT_ID.CONTACT_FORM_EDIT
+      "
+      class="mx-3 my-4"
+      [formGroup]="contactForm"
+    >
+      <div class="row">
+        <mat-form-field class="col-6" appearance="outline">
+          <mat-label>
+            {{ "contact.table.contactName" | translate }}
+          </mat-label>
+          <input matInput formControlName="contactName" />
+          @if (contactForm.controls['contactName'].errors?.['required']) {
+          <mat-error>
+            {{ "shared.error.contactNameRequired" | translate }}
+          </mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field class="col-6" appearance="outline">
+          <mat-label>
+            {{ "contact.table.salutation" | translate }}
+          </mat-label>
+          <mat-select formControlName="salutation">
+            <mat-option *ngFor="let salut of salutations" [value]="salut">{{
+              salut
+            }}</mat-option>
+          </mat-select>
+          @if (contactForm.controls['salutation'].errors?.['required']) {
+          <mat-error>
+            {{ "shared.error.salutionRequired" | translate }}
+          </mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="row my-3">
+        <mat-form-field class="col-6" appearance="outline">
+          <mat-label>
+            {{ "contact.table.phone" | translate }}
+          </mat-label>
+          <input matInput formControlName="mobilePhone" />
+          @if (contactForm.controls['mobilePhone'].errors?.['required']) {
+          <mat-error>
+            {{ "shared.error.phoneRequired" | translate }}
+          </mat-error>
+          } @if (contactForm.controls['mobilePhone'].errors?.['pattern']) {
+          <mat-error>
+            {{ "shared.error.phoneInvalid" | translate }}
+          </mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field class="col-6" appearance="outline">
+          <mat-label>
+            {{ "contact.table.email" | translate }}
+          </mat-label>
+          <input matInput formControlName="email" />
+          <mat-hint>{{ "shared.hint.email" | translate }}</mat-hint>
+          @if (contactForm.controls['email'].errors?.['email']) {
+          <mat-error>
+            {{ "shared.error.emailInvalid" | translate }}
+          </mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="row my-3">
+        <mat-form-field class="col-6" appearance="outline">
+          <mat-label>
+            {{ "contact.table.organization" | translate }}
+          </mat-label>
+          <input matInput formControlName="organization" />
+        </mat-form-field>
+
+        <mat-form-field class="col-6" appearance="outline">
+          <mat-label>
+            {{ "contact.table.leadSrc" | translate }}
+          </mat-label>
+          <mat-select formControlName="leadSrc">
+            <mat-option *ngFor="let src of leadSources" [value]="src">
+              {{ src }}
+            </mat-option>
+          </mat-select>
+          @if (contactForm.controls['leadSrc'].errors?.['required']) {
+          <mat-error>
+            {{ "shared.error.leadSrcRequired" | translate }}
+          </mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="row my-3">
+        <mat-form-field
+          class="col-6"
+          appearance="outline"
+          *ngIf="assignedToUsers && assignedToUsers.length > 0"
+        >
+          <mat-label>
+            {{ "contact.table.assignedTo" | translate }}
+          </mat-label>
+          <mat-select formControlName="assignedTo">
+            <mat-option *ngFor="let user of assignedToUsers" [value]="user">
+              {{ user }}
+            </mat-option>
+          </mat-select>
+          @if (contactForm.controls['assignedTo'].errors?.['required']) {
+          <mat-error>
+            {{ "shared.error.assignedToRequired" | translate }}
+          </mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field class="col-6" appearance="outline">
+          <mat-label>
+            {{ "contact.table.dob" | translate }}
+          </mat-label>
+          <input matInput [matDatepicker]="dobPicker" formControlName="dob" />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="dobPicker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #dobPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="row my-3">
+        <mat-form-field class="col-12" appearance="outline" id="address">
+          <mat-label>
+            {{ "contact.table.address" | translate }}
+          </mat-label>
+          <input matInput formControlName="address" />
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field class="col-12" appearance="outline">
+          <mat-label>
+            {{ "contact.table.description" | translate }}
+          </mat-label>
+          <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close [id]="CONTACT_ID.BUTTON_CANCEL">
+      {{ "shared.cancel" | translate }}
+    </button>
+    <button
+      mat-button
+      cdkFocusInitial
+      (click)="!contactForm.invalid && onSubmit()"
+      [ngClass]="contactForm.invalid ? 'btn-disabled' : 'btn-primary'"
+      [id]="CONTACT_ID.BUTTON_SUBMIT"
+    >
+      {{ "shared.submit" | translate }}
+    </button>
+  </mat-dialog-actions>
+</div>

@@ -1,0 +1,53 @@
+@use "./variables" as *;
+
+.mat-mdc-table {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  .mat-mdc-header-row .mat-mdc-header-cell {
+    background-color: $grey-3;
+    font-weight: 600;
+    font-family: "Atlassian Sans";
+    color: $black80;
+    border-right: 1px solid $grey-2;
+    border-bottom-color: $grey-2;
+  }
+  .mat-mdc-row {
+    &:hover {
+      background-color: $mat-cell-hover-3;
+    }
+    .mat-mdc-cell {
+      border-right: 1px solid $grey-2;
+      border-bottom-color: $grey-2;
+    }
+    :last-child {
+      border-right: none;
+    }
+  }
+  .mat-mdc-row .mat-mdc-cell {
+    font-size: 13px;
+    font-family: "Atlassian Sans";
+  }
+  &.no-data-table {
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+}
+
+.mat-mdc-paginator {
+  background-color: unset !important;
+  .mat-mdc-paginator-page-size-label,
+  .mat-mdc-paginator-range-label,
+  .mat-mdc-select-min-line {
+    font-size: 13px;
+    font-family: "Atlassian Sans";
+    color: $black80;
+  }
+  .mat-mdc-form-field-infix {
+    padding-top: 12px !important;
+    padding-bottom: 0 !important;
+  }
+}

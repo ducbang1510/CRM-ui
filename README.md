@@ -41,3 +41,7 @@ or
 ```
 npm start
 ```
+
+## BE repository
+
+https://github.com/ducbang1510/crm-services

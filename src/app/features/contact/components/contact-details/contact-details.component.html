@@ -12,7 +12,7 @@
           {{ "contact.table.contactName" | translate }}
         </span>
         <span class="text-grey float-end">
-          {{ contact?.contactName || ("shared.missingValue" | translate) }}
+          {{ contact.contactName || ("shared.missingValue" | translate) }}
         </span>
       </mat-list-item>
 
@@ -24,7 +24,7 @@
           {{ "contact.table.salutation" | translate }}
         </span>
         <span class="text-grey float-end">
-          {{ contact?.salutation || ("shared.missingValue" | translate) }}
+          {{ contact.salutation || ("shared.missingValue" | translate) }}
         </span>
       </mat-list-item>
 
@@ -36,7 +36,7 @@
           {{ "contact.table.phone" | translate }}
         </span>
         <span class="text-grey float-end">
-          {{ contact?.mobilePhone || ("shared.missingValue" | translate) }}
+          {{ contact.mobilePhone || ("shared.missingValue" | translate) }}
         </span>
       </mat-list-item>
 
@@ -48,7 +48,7 @@
           {{ "contact.table.email" | translate }}
         </span>
         <span class="text-grey float-end">
-          {{ contact?.email || ("shared.missingValue" | translate) }}
+          {{ contact.email || ("shared.missingValue" | translate) }}
         </span>
       </mat-list-item>
 
@@ -60,7 +60,7 @@
           {{ "contact.table.organization" | translate }}
         </span>
         <span class="text-grey float-end">
-          {{ contact?.organization || ("shared.missingValue" | translate) }}
+          {{ contact.organization || ("shared.missingValue" | translate) }}
         </span>
       </mat-list-item>
 
@@ -73,7 +73,7 @@
         </span>
         <span class="text-grey float-end">
           {{
-            (contact?.dob | date : "mediumDate") ||
+            (contact.dob | date : "mediumDate") ||
               ("shared.missingValue" | translate)
           }}
         </span>
@@ -87,7 +87,7 @@
           {{ "contact.table.leadSrc" | translate }}
         </span>
         <span class="text-grey float-end">
-          {{ contact?.leadSrc || ("shared.missingValue" | translate) }}
+          {{ contact.leadSrc || ("shared.missingValue" | translate) }}
         </span>
       </mat-list-item>
 
@@ -99,7 +99,7 @@
           {{ "contact.table.assignedTo" | translate }}
         </span>
         <span class="text-grey float-end">
-          {{ contact?.assignedTo || ("shared.missingValue" | translate) }}
+          {{ contact.assignedTo || ("shared.missingValue" | translate) }}
         </span>
       </mat-list-item>
 
@@ -111,7 +111,7 @@
           {{ "contact.table.creator" | translate }}
         </span>
         <span class="text-grey float-end">
-          {{ contact?.creator || ("shared.missingValue" | translate) }}
+          {{ contact.creator || ("shared.missingValue" | translate) }}
         </span>
       </mat-list-item>
 
@@ -123,7 +123,7 @@
           {{ "contact.table.address" | translate }}
         </span>
         <span class="text-grey float-end">
-          {{ contact?.address || ("shared.missingValue" | translate) }}
+          {{ contact.address || ("shared.missingValue" | translate) }}
         </span>
       </mat-list-item>
 
@@ -135,7 +135,7 @@
           {{ "contact.table.description" | translate }}
         </span>
         <span class="text-grey float-end">
-          {{ contact?.description || ("shared.missingValue" | translate) }}
+          {{ contact.description || ("shared.missingValue" | translate) }}
         </span>
       </mat-list-item>
 
@@ -148,7 +148,7 @@
         </span>
         <span class="text-grey float-end">
           {{
-            (contact?.createdTime | date : "medium") ||
+            (contact.createdTime | date : "medium") ||
               ("shared.missingValue" | translate)
           }}
         </span>
@@ -163,7 +163,7 @@
         </span>
         <span class="text-grey float-end">
           {{
-            (contact?.updatedTime | date : "medium") ||
+            (contact.updatedTime | date : "medium") ||
               ("shared.missingValue" | translate)
           }}
         </span>

@@ -12,7 +12,7 @@
           {{ "salesOrder.table.subject" | translate }}
         </span>
         <span class="text-grey float-end">
-          {{ salesOrder?.subject || ("shared.missingValue" | translate) }}
+          {{ salesOrder.subject || ("shared.missingValue" | translate) }}
         </span>
       </mat-list-item>
 
@@ -24,7 +24,7 @@
           {{ "salesOrder.table.contactName" | translate }}
         </span>
         <span class="text-grey float-end">
-          {{ salesOrder?.contactName || ("shared.missingValue" | translate) }}
+          {{ salesOrder.contactName || ("shared.missingValue" | translate) }}
         </span>
       </mat-list-item>
 
@@ -36,7 +36,7 @@
           {{ "salesOrder.table.status" | translate }}
         </span>
         <span class="text-grey float-end">
-          {{ salesOrder?.status || ("shared.missingValue" | translate) }}
+          {{ salesOrder.status || ("shared.missingValue" | translate) }}
         </span>
       </mat-list-item>
 
@@ -48,7 +48,7 @@
           {{ "salesOrder.table.total" | translate }}
         </span>
         <span class="text-grey float-end">
-          {{ salesOrder?.total || ("shared.missingValue" | translate) }}
+          {{ salesOrder.total || ("shared.missingValue" | translate) }}
         </span>
       </mat-list-item>
 
@@ -60,7 +60,7 @@
           {{ "salesOrder.table.assignedTo" | translate }}
         </span>
         <span class="text-grey float-end">
-          {{ salesOrder?.assignedTo || ("shared.missingValue" | translate) }}
+          {{ salesOrder.assignedTo || ("shared.missingValue" | translate) }}
         </span>
       </mat-list-item>
 
@@ -72,7 +72,7 @@
           {{ "salesOrder.table.creator" | translate }}
         </span>
         <span class="text-grey float-end">
-          {{ salesOrder?.creator || ("shared.missingValue" | translate) }}
+          {{ salesOrder.creator || ("shared.missingValue" | translate) }}
         </span>
       </mat-list-item>
 
@@ -84,7 +84,7 @@
           {{ "salesOrder.table.description" | translate }}
         </span>
         <span class="text-grey float-end">
-          {{ salesOrder?.description || ("shared.missingValue" | translate) }}
+          {{ salesOrder.description || ("shared.missingValue" | translate) }}
         </span>
       </mat-list-item>
 
@@ -97,7 +97,7 @@
         </span>
         <span class="text-grey float-end">
           {{
-            (salesOrder?.createdTime | date : "medium") ||
+            (salesOrder.createdTime | date : "medium") ||
               ("shared.missingValue" | translate)
           }}
         </span>
@@ -112,7 +112,7 @@
         </span>
         <span class="text-grey float-end">
           {{
-            (salesOrder?.updatedTime | date : "medium") ||
+            (salesOrder.updatedTime | date : "medium") ||
               ("shared.missingValue" | translate)
           }}
         </span>

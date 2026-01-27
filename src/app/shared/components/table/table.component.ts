@@ -6,7 +6,7 @@ import { MatTableModule } from '@angular/material/table';
 
 import { TranslateModule } from '@ngx-translate/core';
 
-import { NoDataFoundComponent } from '~shared/components/no-data-found/no-data-found.component';
+// import { NoDataFoundComponent } from '~shared/components/no-data-found/no-data-found.component';
 
 @Component({
   selector: 'app-table',
@@ -15,7 +15,7 @@ import { NoDataFoundComponent } from '~shared/components/no-data-found/no-data-f
     MatPaginatorModule,
     MatTableModule,
     TranslateModule,
-    NoDataFoundComponent,
+    // NoDataFoundComponent,
   ],
   providers: [DatePipe],
   templateUrl: './table.component.html',

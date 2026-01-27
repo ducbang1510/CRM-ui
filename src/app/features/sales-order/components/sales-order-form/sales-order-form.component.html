@@ -89,7 +89,7 @@
           <mat-error>
             {{ "shared.error.totalRequired" | translate }}
           </mat-error>
-          } @if (salesOrderForm.controls['total'].errors?.['pattern']) {
+          } @if (salesOrderForm.controls['total'].errors?.['invalidNumber']) {
           <mat-error>
             {{ "shared.error.totalInvalid" | translate }}
           </mat-error>

@@ -22,7 +22,7 @@ import {
 } from '@angular/forms';
 import type { User } from '~features/user/user.interface';
 import { UserService } from '~features/user/user.service';
-import { DateRangeValidator } from '~core/validators/common.validator';
+import { CommonValidator } from '~core/validators/common.validator';
 
 @Component({
   selector: 'app-sales-order-filter-group-dialog',
@@ -65,14 +65,24 @@ export class SalesOrderFilterGroupDialogComponent implements OnInit {
         createdTimeFrom: new FormControl(Validators.required),
         createdTimeTo: new FormControl(Validators.required),
       },
-      { validators: DateRangeValidator('createdTimeFrom', 'createdTimeTo') }
+      {
+        validators: CommonValidator.dateRange(
+          'createdTimeFrom',
+          'createdTimeTo'
+        ),
+      }
     );
     this.updatedTimeForm = this.formBuilder.group(
       {
         updatedTimeFrom: new FormControl(Validators.required),
         updatedTimeTo: new FormControl(Validators.required),
       },
-      { validators: DateRangeValidator('updatedTimeFrom', 'updatedTimeTo') }
+      {
+        validators: CommonValidator.dateRange(
+          'updatedTimeFrom',
+          'updatedTimeTo'
+        ),
+      }
     );
   }
 

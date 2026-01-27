@@ -46,7 +46,7 @@
               ></mat-datepicker-toggle>
               <mat-datepicker #createdTimeFromPicker></mat-datepicker>
               @if
-              (createdTimeForm.controls['createdTimeFrom'].errors?.['restrict'])
+              (createdTimeForm.controls['createdTimeFrom'].errors?.['invalidDateRange'])
               {
               <mat-error> From field must be less than To field </mat-error>
               }
@@ -89,7 +89,7 @@
               ></mat-datepicker-toggle>
               <mat-datepicker #updatedTimeFromPicker></mat-datepicker>
               @if
-              (updatedTimeForm.controls['updatedTimeFrom'].errors?.['restrict'])
+              (updatedTimeForm.controls['updatedTimeFrom'].errors?.['invalidDateRange'])
               {
               <mat-error> From field must be less than To field </mat-error>
               }

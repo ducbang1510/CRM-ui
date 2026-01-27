@@ -26,6 +26,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { TranslateModule } from '@ngx-translate/core';
 
+import { CommonValidator } from '~core/validators/common.validator';
+
 import { ToastService } from '~shared/services/toast.service';
 
 import { Contact } from '~features/contact/contact.interface';
@@ -79,7 +81,7 @@ export class SalesOrderFormComponent implements OnInit {
       status: new FormControl('', [Validators.required]),
       total: new FormControl('', [
         Validators.required,
-        Validators.pattern('^[0-9]+$'),
+        CommonValidator.isNumber,
       ]),
       assignedTo: new FormControl('', [Validators.required]),
       description: new FormControl(''),
@@ -110,6 +112,7 @@ export class SalesOrderFormComponent implements OnInit {
         [{ name: 'skipLoading', value: 'true' }]
       )
       .subscribe((data) => {
+        console.log('data', data);
         this.setFormData(data);
       });
   }
@@ -128,6 +131,7 @@ export class SalesOrderFormComponent implements OnInit {
       data['description'] || ''
     );
     this.createdTime = data['createdTime'] || new Date();
+    console.log('salesOrderForm', this.salesOrderForm);
   }
 
   onSubmit() {

@@ -8,6 +8,11 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luuthanhvan/CRM-ui.git"
+  },
+  "author": "Van Luu",
   "private": true,
   "dependencies": {
     "@angular/cdk": "^19.2.18",

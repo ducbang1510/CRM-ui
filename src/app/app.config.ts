@@ -27,7 +27,6 @@ import { TranslateLoader, provideTranslateService } from '@ngx-translate/core'; 
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'; // loads translations from JSON files.
 /* Internationalization (i18n) */
 import { authenticationInterceptor } from '~core/interceptors/auth.interceptor';
-import { provideNativeDateAdapter } from '@angular/material/core';
 import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -77,7 +76,6 @@ export const appConfig: ApplicationConfig = {
       },
       defaultLanguage: 'en',
     }),
-    provideNativeDateAdapter(),
     provideCharts(withDefaultRegisterables()),
   ],
 };

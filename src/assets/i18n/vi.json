@@ -1,14 +1,4 @@
 {
-  "aiChat": {
-    "title": "Trợ lý CRM",
-    "placeholder": "Hỏi tôi bất cứ điều gì về dữ liệu CRM của bạn...",
-    "inputPlaceholder": "Nhập tin nhắn...",
-    "send": "Gửi",
-    "thinking": "Đang suy nghĩ...",
-    "toolsUsed": "Công cụ đã dùng",
-    "newSession": "Phiên mới",
-    "cancel": "Hủy yêu cầu"
-  },
   "contact": {
     "title": "Liên hệ",
     "createNewContact": "Tạo mới liên hệ",
@@ -39,17 +29,6 @@
     "salesOrderDetails": "Chi tiết đơn đặt hàng",
     "listOfSalesOrder": "Danh sách đơn đặt hàng",
     "searchBySubject": "Tìm kiếm theo nội dung",
-    "addItem": "Thêm mục",
-    "editItem": "Sửa mục",
-    "lineItems": {
-      "title": "Chi tiết đơn hàng",
-      "product": "Sản phẩm",
-      "quantity": "Số lượng",
-      "unitPrice": "Đơn giá",
-      "discount": "Chiết khấu",
-      "lineTotal": "Thành tiền",
-      "itemsTotal": "Tổng cộng"
-    },
     "table": {
       "subject": "Chủ đề",
       "contactName": "Tên liên hệ",
@@ -68,124 +47,20 @@
     "editUserInfo": "Chỉnh sửa thông tin nhân viên",
     "listOfUsers": "Danh sách nhân viên",
     "userDetails": "Chi tiết thông tin nhân viên",
-    "changePassword": "Đổi mật khẩu",
-    "oldPassword": "Mật khẩu cũ",
-    "newPassword": "Mật khẩu mới",
     "table": {
       "name": "Họ tên",
       "username": "Tên đăng nhập",
       "password": "Mật khẩu",
       "confirmPassword": "Nhập lại mật khẩu",
       "admin": "Quản lý",
-      "staff": "Nhân viên",
       "active": "Hoạt động",
       "email": "Email",
       "phone": "Số điện thoại",
       "createdTime": "Ngày tạo"
     }
   },
-  "product": {
-    "title": "Sản phẩm",
-    "createNewProduct": "Tạo mới sản phẩm",
-    "editProduct": "Chỉnh sửa sản phẩm",
-    "productDetails": "Chi tiết sản phẩm",
-    "listOfProducts": "Danh sách sản phẩm",
-    "searchByName": "Tìm kiếm theo tên sản phẩm",
-    "active": "Hoạt động",
-    "inactive": "Ngừng hoạt động",
-    "table": {
-      "name": "Tên sản phẩm",
-      "price": "Giá",
-      "isActive": "Trạng thái",
-      "description": "Mô tả",
-      "createdTime": "Ngày tạo",
-      "updatedTime": "Ngày cập nhật"
-    }
-  },
-  "file": {
-    "title": "Tệp đính kèm",
-    "upload": "Tải lên",
-    "download": "Tải xuống",
-    "table": {
-      "fileName": "Tên tệp",
-      "contentType": "Loại",
-      "size": "Kích thước",
-      "uploadedOn": "Ngày tải lên"
-    }
-  },
-  "note": {
-    "title": "Ghi chú",
-    "addNote": "Thêm ghi chú",
-    "editNote": "Sửa ghi chú",
-    "table": {
-      "noteType": "Loại",
-      "content": "Nội dung",
-      "createdBy": "Tạo bởi",
-      "createdOn": "Ngày tạo"
-    }
-  },
-  "task": {
-    "title": "Công việc",
-    "createNewTask": "Tạo mới công việc",
-    "editTask": "Chỉnh sửa công việc",
-    "taskDetails": "Chi tiết công việc",
-    "listOfTasks": "Công việc của tôi",
-    "searchByTitle": "Tìm kiếm theo tiêu đề",
-    "summary": {
-      "open": "Mở",
-      "inProgress": "Đang thực hiện",
-      "done": "Hoàn thành"
-    },
-    "table": {
-      "title": "Tiêu đề",
-      "taskType": "Loại công việc",
-      "status": "Trạng thái",
-      "priority": "Mức ưu tiên",
-      "dueDate": "Ngày hết hạn",
-      "assignedTo": "Phụ trách",
-      "createdBy": "Tạo bởi",
-      "description": "Mô tả",
-      "createdOn": "Ngày tạo",
-      "updatedOn": "Ngày cập nhật"
-    }
-  },
   "dashboard": {
-    "title": "Bảng điều khiển",
-    "revenueTrend": "Xu hướng doanh thu",
-    "pipelineSummary": "Tổng quan đơn hàng",
-    "topUsers": "Nhân viên xuất sắc",
-    "pipeline": {
-      "status": "Trạng thái",
-      "orderCount": "Đơn hàng",
-      "totalRevenue": "Doanh thu"
-    },
-    "topUser": {
-      "userName": "Nhân viên",
-      "orderCount": "Đơn hàng",
-      "totalRevenue": "Doanh thu"
-    }
-  },
-  "notification": {
-    "title": "Thông báo",
-    "empty": "Không có thông báo",
-    "loading": "Đang tải..."
-  },
-  "report": {
-    "title": "Báo cáo",
-    "from": "Từ ngày",
-    "to": "Đến ngày",
-    "search": "Tìm kiếm",
-    "download": "Tải xuống",
-    "table": {
-      "reportDate": "Ngày báo cáo",
-      "totalRevenue": "Tổng doanh thu",
-      "totalOrders": "Tổng đơn hàng",
-      "ordersCreated": "Đã tạo",
-      "ordersApproved": "Đã duyệt",
-      "ordersDelivered": "Đã giao",
-      "ordersCanceled": "Đã hủy",
-      "status": "Trạng thái"
-    }
+    "title": "Bảng điều khiển"
   },
   "shared": {
     "modify": "Chỉnh sửa",
@@ -218,7 +93,7 @@
       "nameRequired": "*Tên là bắt buộc!",
       "usernameRequired": "*Tên người dùng là bắt buộc!",
       "passwordRequired": "*Mật khẩu là bắt buộc!",
-      "passwordMinLength": "*Mật khẩu phải có ít nhất 8 ký tự!",
+      "passwordMinLength": "*Mật khẩu phải có ít nhất 6 ký tự!",
       "passwordsMustMatch": "*Mật khẩu và nhập lại mật khẩu phải khớp!",
       "confirmPasswordRequired": "*Yêu cầu xác nhận mật khẩu!",
       "emailRequired": "*Email là bắt buộc!",
@@ -232,17 +107,7 @@
       "subjectRequired": "*Nội dung là bắt buộc",
       "statusRequired": "*Trạng thái là bắt buộc",
       "totalRequired": "*Tổng số là bắt buộc",
-      "totalInvalid": "*Tổng số phải là chữ số",
-      "productNameRequired": "*Tên sản phẩm là bắt buộc!",
-      "priceRequired": "*Giá là bắt buộc!",
-      "priceInvalid": "*Giá phải là số dương!",
-      "productRequired": "*Sản phẩm là bắt buộc!",
-      "quantityRequired": "*Số lượng là bắt buộc!",
-      "quantityMin": "*Số lượng tối thiểu là 1!",
-      "titleRequired": "*Tiêu đề là bắt buộc!",
-      "taskTypeRequired": "*Loại công việc là bắt buộc!",
-      "noteTypeRequired": "*Loại ghi chú là bắt buộc!",
-      "contentRequired": "*Nội dung là bắt buộc!"
+      "totalInvalid": "*Tổng số phải là chữ số"
     }
   }
 }

@@ -84,15 +84,6 @@ export class AuthService {
     );
   }
 
-  logout(): Observable<any> {
-    // authInterceptor automatically adds Authorization: Bearer {token}
-    return this.endpointService.addEndpoint(
-      `${this.AUTH_SERVER}/oauth2/logout`,
-      [],
-      {}
-    );
-  }
-
   getRefreshToken(refreshToken: string): Observable<TokenResponse> {
     const requestBody = new URLSearchParams({
       grant_type: 'refresh_token',
@@ -113,16 +104,15 @@ export class AuthService {
 
   /* Functions for handling Local Storage */
   setDataToLocalStorage(key: string, value: any): void {
-    const storage = this.resolveStorage(key);
     if (typeof value === 'object') {
-      storage.setItem(key, JSON.stringify(value));
+      window.localStorage.setItem(key, JSON.stringify(value));
     } else {
-      storage.setItem(key, value);
+      window.localStorage.setItem(key, value);
     }
   }
 
   removeDataFromLocalStorage(key: string): void {
-    this.resolveStorage(key).removeItem(key);
+    window.localStorage.removeItem(key);
   }
 
   tryParseJSONObject(jsonString: string) {
@@ -136,20 +126,10 @@ export class AuthService {
   }
 
   getDataFromLocalStorage(key: string) {
-    const data = this.resolveStorage(key).getItem(key);
+    const data = window.localStorage.getItem(key);
     if (!data) {
       return null;
     }
     return this.tryParseJSONObject(data) ? JSON.parse(data) : data;
-  }
-
-  /**
-   * OAuth2 token is kept in sessionStorage so it is cleared automatically
-   * when the browser tab or window is closed. All other keys use localStorage.
-   */
-  private resolveStorage(key: string): Storage {
-    return key === LOCAL_STORAGE_KEYS.OAUTH2_TOKEN
-      ? window.sessionStorage
-      : window.localStorage;
   }
 }

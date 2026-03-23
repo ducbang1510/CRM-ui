@@ -1,13 +1,9 @@
 export const APP_FEATURES = {
-  AI_CHAT: 'aiChat',
   AUTH: 'auth',
   CONTACTS: 'contacts',
   DASHBOARD: 'dashboard',
   HOME: 'home',
-  PRODUCTS: 'products',
-  REPORTS: 'reports',
   SALES_ORDERS: 'salesOrders',
-  TASKS: 'tasks',
   USERS: 'users',
 };
 

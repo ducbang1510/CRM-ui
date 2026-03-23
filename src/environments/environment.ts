@@ -8,5 +8,4 @@ export const environment = {
   apiDomain: 'http://localhost:8080',
   clientId: 'crm-app',
   clientSecret: 'secret',
-  socketPort: 9092,
 };

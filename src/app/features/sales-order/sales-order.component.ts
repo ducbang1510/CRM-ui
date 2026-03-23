@@ -183,7 +183,7 @@ export class SalesOrderComponent implements OnInit {
       SalesOrderDetailsComponent,
       {
         disableClose: true,
-        width: '900px',
+        width: '600px',
         data: {
           orderId,
         },

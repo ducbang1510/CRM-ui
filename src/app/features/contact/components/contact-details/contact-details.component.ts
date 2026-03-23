@@ -8,8 +8,6 @@ import { MatListModule } from '@angular/material/list';
 
 import { TranslateModule } from '@ngx-translate/core';
 
-import { FileListComponent } from '~shared/components/file-attachments/file-list/file-list.component';
-import { NotesListComponent } from '~shared/components/notes/notes-list/notes-list.component';
 import { CONTACT_ID } from '~features/contact/contact.constant';
 import { Contact } from '~features/contact/contact.interface';
 import { ContactService } from '~features/contact/contact.service';
@@ -22,8 +20,6 @@ import { ContactService } from '~features/contact/contact.service';
     MatDialogModule,
     MatListModule,
     MatButtonModule,
-    FileListComponent,
-    NotesListComponent,
   ],
   templateUrl: './contact-details.component.html',
   styleUrl: './contact-details.component.scss',

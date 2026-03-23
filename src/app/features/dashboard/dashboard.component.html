@@ -61,5 +61,149 @@
         </mat-card-content>
       </mat-card>
     </div>
+
+    <!-- Revenue Trend -->
+    <div class="col-12 mt-4">
+      <mat-card appearance="outlined">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>
+              {{ "dashboard.revenueTrend" | translate }}
+            </mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <div *ngIf="revenueTrendLabels.length > 0" class="chart-container">
+            <canvas
+              baseChart
+              [type]="'bar'"
+              [datasets]="revenueTrendDatasets"
+              [labels]="revenueTrendLabels"
+              [options]="revenueTrendOptions"
+            >
+            </canvas>
+          </div>
+          <div *ngIf="revenueTrendLabels.length === 0" class="text-center text-grey my-3">
+            {{ "shared.noDataAvailable" | translate }}
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <!-- Pipeline Summary + Top Users -->
+    <div class="col-6 mt-4">
+      <mat-card appearance="outlined">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>
+              {{ "dashboard.pipelineSummary" | translate }}
+            </mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <table
+            mat-table
+            [dataSource]="pipelineSummary"
+            class="w-100"
+            *ngIf="pipelineSummary.length > 0"
+          >
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef class="text-center">
+                {{ "dashboard.pipeline.status" | translate }}
+              </th>
+              <td class="text-center" mat-cell *matCellDef="let item">
+                <span class="status-pill" [attr.data-status]="item.status">
+                  {{ item.status || '-' }}
+                </span>
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="orderCount">
+              <th mat-header-cell *matHeaderCellDef class="text-center">
+                {{ "dashboard.pipeline.orderCount" | translate }}
+              </th>
+              <td class="text-center" mat-cell *matCellDef="let item">
+                {{ item.orderCount || 0 }}
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="totalRevenue">
+              <th mat-header-cell *matHeaderCellDef class="text-center">
+                {{ "dashboard.pipeline.totalRevenue" | translate }}
+              </th>
+              <td class="text-center" mat-cell *matCellDef="let item">
+                {{ item.totalRevenue != null ? (item.totalRevenue | number:'1.2-2') : '-' }}
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="pipelineColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: pipelineColumns"></tr>
+          </table>
+          <div *ngIf="pipelineSummary.length === 0" class="text-center text-grey my-3">
+            {{ "shared.noDataAvailable" | translate }}
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="col-6 mt-4">
+      <mat-card appearance="outlined">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>
+              {{ "dashboard.topUsers" | translate }}
+            </mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <table
+            mat-table
+            [dataSource]="topUsers"
+            class="w-100"
+            *ngIf="topUsers.length > 0"
+          >
+            <ng-container matColumnDef="rank">
+              <th mat-header-cell *matHeaderCellDef class="text-center">#</th>
+              <td class="text-center" mat-cell *matCellDef="let item; let i = index">
+                {{ i + 1 }}
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="userName">
+              <th mat-header-cell *matHeaderCellDef class="text-center">
+                {{ "dashboard.topUser.userName" | translate }}
+              </th>
+              <td class="text-center" mat-cell *matCellDef="let item">
+                {{ item.userName || '-' }}
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="orderCount">
+              <th mat-header-cell *matHeaderCellDef class="text-center">
+                {{ "dashboard.topUser.orderCount" | translate }}
+              </th>
+              <td class="text-center" mat-cell *matCellDef="let item">
+                {{ item.orderCount || 0 }}
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="totalRevenue">
+              <th mat-header-cell *matHeaderCellDef class="text-center">
+                {{ "dashboard.topUser.totalRevenue" | translate }}
+              </th>
+              <td class="text-center" mat-cell *matCellDef="let item">
+                {{ item.totalRevenue != null ? (item.totalRevenue | number:'1.2-2') : '-' }}
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="topUserColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: topUserColumns"></tr>
+          </table>
+          <div *ngIf="topUsers.length === 0" class="text-center text-grey my-3">
+            {{ "shared.noDataAvailable" | translate }}
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 </div>

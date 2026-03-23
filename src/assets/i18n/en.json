@@ -1,4 +1,14 @@
 {
+  "aiChat": {
+    "title": "CRM Assistant",
+    "placeholder": "Ask me anything about your CRM data...",
+    "inputPlaceholder": "Type a message...",
+    "send": "Send",
+    "thinking": "Thinking...",
+    "toolsUsed": "Tools Used",
+    "newSession": "New Session",
+    "cancel": "Cancel request"
+  },
   "contact": {
     "title": "Contacts",
     "createNewContact": "Create new Contact",
@@ -29,6 +39,17 @@
     "salesOrderDetails": "Sales order details",
     "listOfSalesOrder": "List of Sales orders",
     "searchBySubject": "Search by Subject",
+    "addItem": "Add Item",
+    "editItem": "Edit Item",
+    "lineItems": {
+      "title": "Line Items",
+      "product": "Product",
+      "quantity": "Quantity",
+      "unitPrice": "Unit Price",
+      "discount": "Discount",
+      "lineTotal": "Line Total",
+      "itemsTotal": "Items Total"
+    },
     "table": {
       "subject": "Subject",
       "contactName": "Contact name",
@@ -47,20 +68,124 @@
     "editUserInfo": "Edit the User",
     "listOfUsers": "List of Users",
     "userDetails": "User details",
+    "changePassword": "Change Password",
+    "oldPassword": "Old Password",
+    "newPassword": "New Password",
     "table": {
       "name": "Name",
       "username": "Username",
       "password": "Password",
       "confirmPassword": "Confirm password",
       "admin": "Admin",
+      "staff": "Staff",
       "active": "Active",
       "email": "Email",
       "phone": "Phone number",
       "createdTime": "Created time"
     }
   },
+  "product": {
+    "title": "Products",
+    "createNewProduct": "Create new Product",
+    "editProduct": "Edit the Product",
+    "productDetails": "Product details",
+    "listOfProducts": "List of Products",
+    "searchByName": "Search by Product name",
+    "active": "Active",
+    "inactive": "Inactive",
+    "table": {
+      "name": "Product name",
+      "price": "Price",
+      "isActive": "Status",
+      "description": "Description",
+      "createdTime": "Created time",
+      "updatedTime": "Updated time"
+    }
+  },
+  "file": {
+    "title": "File Attachments",
+    "upload": "Upload",
+    "download": "Download",
+    "table": {
+      "fileName": "File Name",
+      "contentType": "Type",
+      "size": "Size",
+      "uploadedOn": "Uploaded On"
+    }
+  },
+  "note": {
+    "title": "Notes",
+    "addNote": "Add Note",
+    "editNote": "Edit Note",
+    "table": {
+      "noteType": "Type",
+      "content": "Content",
+      "createdBy": "Created By",
+      "createdOn": "Created On"
+    }
+  },
+  "task": {
+    "title": "Tasks",
+    "createNewTask": "Create new Task",
+    "editTask": "Edit the Task",
+    "taskDetails": "Task details",
+    "listOfTasks": "My Tasks",
+    "searchByTitle": "Search by Title",
+    "summary": {
+      "open": "Open",
+      "inProgress": "In Progress",
+      "done": "Done"
+    },
+    "table": {
+      "title": "Title",
+      "taskType": "Task Type",
+      "status": "Status",
+      "priority": "Priority",
+      "dueDate": "Due Date",
+      "assignedTo": "Assigned To",
+      "createdBy": "Created By",
+      "description": "Description",
+      "createdOn": "Created On",
+      "updatedOn": "Updated On"
+    }
+  },
   "dashboard": {
-    "title": "Dashboard"
+    "title": "Dashboard",
+    "revenueTrend": "Revenue Trend",
+    "pipelineSummary": "Pipeline Summary",
+    "topUsers": "Top Users",
+    "pipeline": {
+      "status": "Status",
+      "orderCount": "Orders",
+      "totalRevenue": "Revenue"
+    },
+    "topUser": {
+      "userName": "User",
+      "orderCount": "Orders",
+      "totalRevenue": "Revenue"
+    }
+  },
+  "notification": {
+    "title": "Notifications",
+    "empty": "No notifications",
+    "loading": "Loading..."
+  },
+  "report": {
+    "title": "Reports",
+    "from": "From",
+    "to": "To",
+    "search": "Search",
+    "download": "Download",
+    "table": {
+      "reportDate": "Report Date",
+      "totalRevenue": "Total Revenue",
+      "totalOrders": "Total Orders",
+      "ordersCreated": "Created",
+      "ordersApproved": "Approved",
+      "ordersDelivered": "Delivered",
+      "ordersCanceled": "Canceled",
+      "status": "Status"
+    }
   },
   "shared": {
     "modify": "Modify",
@@ -93,7 +218,7 @@
       "nameRequired": "*Name is required!",
       "usernameRequired": "*Username is required!",
       "passwordRequired": "*Password is required!",
-      "passwordMinLength": "*Password must be at least 6 characters!",
+      "passwordMinLength": "*Password must be at least 8 characters!",
       "passwordsMustMatch": "*Password and confirm password must match!",
       "confirmPasswordRequired": "*Confirm password is required!",
       "emailRequired": "*Email is required!",
@@ -107,7 +232,17 @@
       "subjectRequired": "*Subject is required",
       "statusRequired": "*Status is required",
       "totalRequired": "*Total is required",
-      "totalInvalid": "*Total must be a number"
+      "totalInvalid": "*Total must be a number",
+      "productNameRequired": "*Product name is required!",
+      "priceRequired": "*Price is required!",
+      "priceInvalid": "*Price must be a positive number!",
+      "productRequired": "*Product is required!",
+      "quantityRequired": "*Quantity is required!",
+      "quantityMin": "*Quantity must be at least 1!",
+      "titleRequired": "*Title is required!",
+      "taskTypeRequired": "*Task type is required!",
+      "noteTypeRequired": "*Note type is required!",
+      "contentRequired": "*Content is required!"
     }
   }
 }

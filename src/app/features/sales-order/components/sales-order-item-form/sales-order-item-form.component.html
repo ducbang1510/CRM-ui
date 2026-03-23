@@ -1,0 +1,80 @@
+<div>
+  <h2 mat-dialog-title>
+    {{
+      this.data.action === "add"
+        ? ("salesOrder.addItem" | translate)
+        : ("salesOrder.editItem" | translate)
+    }}
+  </h2>
+  <mat-dialog-content>
+    <form class="mx-3 my-4" [formGroup]="itemForm">
+      <div class="row">
+        <mat-form-field class="col-6" appearance="outline">
+          <mat-label>
+            {{ "salesOrder.lineItems.product" | translate }}
+          </mat-label>
+          <mat-select formControlName="productFk">
+            <mat-option *ngFor="let product of products" [value]="product.pk">
+              {{ product.name }}
+            </mat-option>
+          </mat-select>
+          @if (itemForm.controls['productFk'].errors?.['required']) {
+          <mat-error>
+            {{ "shared.error.productRequired" | translate }}
+          </mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field class="col-6" appearance="outline">
+          <mat-label>
+            {{ "salesOrder.lineItems.quantity" | translate }}
+          </mat-label>
+          <input matInput type="number" formControlName="quantity" />
+          @if (itemForm.controls['quantity'].errors?.['required']) {
+          <mat-error>
+            {{ "shared.error.quantityRequired" | translate }}
+          </mat-error>
+          } @if (itemForm.controls['quantity'].errors?.['min']) {
+          <mat-error>
+            {{ "shared.error.quantityMin" | translate }}
+          </mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="row my-3">
+        <mat-form-field class="col-6" appearance="outline">
+          <mat-label>
+            {{ "salesOrder.lineItems.unitPrice" | translate }}
+          </mat-label>
+          <input matInput type="number" formControlName="unitPrice" />
+          @if (itemForm.controls['unitPrice'].errors?.['required']) {
+          <mat-error>
+            {{ "shared.error.priceRequired" | translate }}
+          </mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field class="col-6" appearance="outline">
+          <mat-label>
+            {{ "salesOrder.lineItems.discount" | translate }}
+          </mat-label>
+          <input matInput type="number" formControlName="discount" />
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>
+      {{ "shared.cancel" | translate }}
+    </button>
+    <button
+      mat-button
+      cdkFocusInitial
+      (click)="!itemForm.invalid && onSubmit()"
+      [ngClass]="itemForm.invalid ? 'btn-disabled' : 'btn-primary'"
+    >
+      {{ "shared.submit" | translate }}
+    </button>
+  </mat-dialog-actions>
+</div>

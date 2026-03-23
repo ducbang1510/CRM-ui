@@ -1,0 +1,69 @@
+<div [id]="TASK_ID.TASK_DETAILS">
+  <h2 mat-dialog-title>
+    {{ "task.taskDetails" | translate }}
+  </h2>
+  <mat-dialog-content>
+    <mat-list *ngIf="task" role="list" [id]="TASK_ID.TASK_DETAILS_LIST">
+      <mat-list-item role="listitem" class="d-flex justify-content-between align-items-center">
+        <span class="text-bold float-start">{{ "task.table.title" | translate }}</span>
+        <span class="text-grey float-end">{{ task.title || ("shared.missingValue" | translate) }}</span>
+      </mat-list-item>
+
+      <mat-list-item role="listitem" class="d-flex justify-content-between align-items-center">
+        <span class="text-bold float-start">{{ "task.table.taskType" | translate }}</span>
+        <span class="text-grey float-end">{{ task.taskType || ("shared.missingValue" | translate) }}</span>
+      </mat-list-item>
+
+      <mat-list-item role="listitem" class="d-flex justify-content-between align-items-center">
+        <span class="text-bold float-start">{{ "task.table.status" | translate }}</span>
+        <span class="text-grey float-end">{{ task.status || ("shared.missingValue" | translate) }}</span>
+      </mat-list-item>
+
+      <mat-list-item role="listitem" class="d-flex justify-content-between align-items-center">
+        <span class="text-bold float-start">{{ "task.table.priority" | translate }}</span>
+        <span class="text-grey float-end">{{ task.priority || ("shared.missingValue" | translate) }}</span>
+      </mat-list-item>
+
+      <mat-list-item role="listitem" class="d-flex justify-content-between align-items-center">
+        <span class="text-bold float-start">{{ "task.table.dueDate" | translate }}</span>
+        <span class="text-grey float-end">
+          {{ (task.dueDate | date : "mediumDate") || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item role="listitem" class="d-flex justify-content-between align-items-center">
+        <span class="text-bold float-start">{{ "task.table.assignedTo" | translate }}</span>
+        <span class="text-grey float-end">{{ task.assignedTo || ("shared.missingValue" | translate) }}</span>
+      </mat-list-item>
+
+      <mat-list-item role="listitem" class="d-flex justify-content-between align-items-center">
+        <span class="text-bold float-start">{{ "task.table.createdBy" | translate }}</span>
+        <span class="text-grey float-end">{{ task.createdBy || ("shared.missingValue" | translate) }}</span>
+      </mat-list-item>
+
+      <mat-list-item role="listitem" class="d-flex justify-content-between align-items-center">
+        <span class="text-bold float-start">{{ "task.table.description" | translate }}</span>
+        <span class="text-grey float-end">{{ task.description || ("shared.missingValue" | translate) }}</span>
+      </mat-list-item>
+
+      <mat-list-item role="listitem" class="d-flex justify-content-between align-items-center">
+        <span class="text-bold float-start">{{ "task.table.createdOn" | translate }}</span>
+        <span class="text-grey float-end">
+          {{ (task.createdOn | date : "medium") || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item role="listitem" class="d-flex justify-content-between align-items-center border-none">
+        <span class="text-bold float-start">{{ "task.table.updatedOn" | translate }}</span>
+        <span class="text-grey float-end">
+          {{ (task.updatedOn | date : "medium") || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+    </mat-list>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close [id]="TASK_ID.BUTTON_CLOSE">
+      {{ "shared.close" | translate }}
+    </button>
+  </mat-dialog-actions>
+</div>

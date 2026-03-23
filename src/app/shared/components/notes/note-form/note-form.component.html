@@ -1,0 +1,57 @@
+<div>
+  <h2 mat-dialog-title>
+    {{
+      data.action === "add"
+        ? ("note.addNote" | translate)
+        : ("note.editNote" | translate)
+    }}
+  </h2>
+  <mat-dialog-content>
+    <form class="mx-3 my-4" [formGroup]="noteForm">
+      <div class="row">
+        <mat-form-field class="col-12" appearance="outline">
+          <mat-label>
+            {{ "note.table.noteType" | translate }}
+          </mat-label>
+          <mat-select formControlName="noteType">
+            <mat-option *ngFor="let type of noteTypes" [value]="type">
+              {{ type }}
+            </mat-option>
+          </mat-select>
+          @if (noteForm.controls['noteType'].errors?.['required']) {
+          <mat-error>
+            {{ "shared.error.noteTypeRequired" | translate }}
+          </mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="row my-3">
+        <mat-form-field class="col-12" appearance="outline">
+          <mat-label>
+            {{ "note.table.content" | translate }}
+          </mat-label>
+          <textarea matInput formControlName="content" rows="4"></textarea>
+          @if (noteForm.controls['content'].errors?.['required']) {
+          <mat-error>
+            {{ "shared.error.contentRequired" | translate }}
+          </mat-error>
+          }
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>
+      {{ "shared.cancel" | translate }}
+    </button>
+    <button
+      mat-button
+      cdkFocusInitial
+      (click)="!noteForm.invalid && onSubmit()"
+      [ngClass]="noteForm.invalid ? 'btn-disabled' : 'btn-primary'"
+    >
+      {{ "shared.submit" | translate }}
+    </button>
+  </mat-dialog-actions>
+</div>

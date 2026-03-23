@@ -1,0 +1,91 @@
+<div [id]="PRODUCT_ID.PRODUCT_DETAILS">
+  <h2 mat-dialog-title>
+    {{ "product.productDetails" | translate }}
+  </h2>
+  <mat-dialog-content>
+    <mat-list *ngIf="product" role="list" [id]="PRODUCT_ID.PRODUCT_DETAILS_LIST">
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold float-start">
+          {{ "product.table.name" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ product.name || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold float-start">
+          {{ "product.table.price" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ product.price != null ? (product.price | number:'1.2-2') : ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold float-start">
+          {{ "product.table.isActive" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ product.isActive ? ("product.active" | translate) : ("product.inactive" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold float-start">
+          {{ "product.table.description" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{ product.description || ("shared.missingValue" | translate) }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center"
+      >
+        <span class="text-bold float-start">
+          {{ "product.table.createdTime" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{
+            (product.createdTime | date : "medium") ||
+              ("shared.missingValue" | translate)
+          }}
+        </span>
+      </mat-list-item>
+
+      <mat-list-item
+        role="listitem"
+        class="d-flex justify-content-between align-items-center border-none"
+      >
+        <span class="text-bold float-start">
+          {{ "product.table.updatedTime" | translate }}
+        </span>
+        <span class="text-grey float-end">
+          {{
+            (product.updatedTime | date : "medium") ||
+              ("shared.missingValue" | translate)
+          }}
+        </span>
+      </mat-list-item>
+    </mat-list>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close [id]="PRODUCT_ID.BUTTON_CLOSE">
+      {{ "shared.close" | translate }}
+    </button>
+  </mat-dialog-actions>
+</div>

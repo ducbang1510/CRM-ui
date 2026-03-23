@@ -169,6 +169,20 @@
         </span>
       </mat-list-item>
     </mat-list>
+
+    <!-- Notes Section -->
+    <app-notes-list
+      *ngIf="contact"
+      entityType="CONTACT"
+      [entityFk]="data.contactId"
+    ></app-notes-list>
+
+    <!-- Files Section -->
+    <app-file-list
+      *ngIf="contact"
+      entityType="CONTACT"
+      [entityFk]="data.contactId"
+    ></app-file-list>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close [id]="CONTACT_ID.BUTTON_CLOSE">

@@ -176,7 +176,7 @@ export class ContactComponent implements OnInit {
   openContactDetailsDialog(contactId: string) {
     const contactDetailsDialogRef = this.dialog.open(ContactDetailsComponent, {
       disableClose: true,
-      width: '600px',
+      width: '900px',
       data: {
         contactId,
       },

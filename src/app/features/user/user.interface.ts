@@ -2,6 +2,7 @@ export interface User {
   email: string;
   isActive: boolean;
   isAdmin: boolean;
+  isStaff: boolean;
   name: string;
   password: string;
   phone: string;

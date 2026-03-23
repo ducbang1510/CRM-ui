@@ -17,8 +17,9 @@ export class AuthGuard implements CanActivate {
         this.authService.removeDataFromLocalStorage(
           LOCAL_STORAGE_KEYS.OAUTH2_TOKEN
         );
-        // clear all value from local storage
+        // clear all value from local storage and session storage
         window.localStorage.clear();
+        window.sessionStorage.clear();
         return false;
       }
     }

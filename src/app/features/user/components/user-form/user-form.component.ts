@@ -77,6 +77,7 @@ export class UserFormComponent implements OnInit {
         Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'),
       ]),
       isAdmin: new FormControl(false),
+      isStaff: new FormControl(false),
       isActive: new FormControl(false),
     });
     if (this.data && this.data.action === 'edit') {
@@ -100,6 +101,7 @@ export class UserFormComponent implements OnInit {
     this.userForm.controls['email'].setValue(data['email'] || '');
     this.userForm.controls['phone'].setValue(data['phone'] || '');
     this.userForm.controls['isAdmin'].setValue(data['isAdmin'] || false);
+    this.userForm.controls['isStaff'].setValue(data['isStaff'] || false);
     this.userForm.controls['isActive'].setValue(data['isActive'] || false);
   }
 
@@ -111,6 +113,7 @@ export class UserFormComponent implements OnInit {
       email: this.userForm.controls['email'].value,
       phone: this.userForm.controls['phone'].value,
       isAdmin: this.userForm.controls['isAdmin'].value,
+      isStaff: this.userForm.controls['isStaff'].value,
       isActive: this.userForm.controls['isActive'].value,
     };
     if (this.data.action === 'add') {

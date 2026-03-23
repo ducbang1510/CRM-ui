@@ -1,0 +1,33 @@
+<div class="notification-panel">
+  <div class="notification-header px-3 py-2">
+    <h3 class="m-0">{{ "notification.title" | translate }}</h3>
+  </div>
+  <mat-divider></mat-divider>
+
+  <div class="notification-list" *ngIf="!loading && notifications.length > 0">
+    <mat-list>
+      <mat-list-item *ngFor="let n of notifications" class="notification-item">
+        <mat-icon matListItemIcon class="notification-icon">
+          {{ getNotificationIcon(n.type) }}
+        </mat-icon>
+        <div matListItemTitle class="notification-message">
+          {{ n.message || '-' }}
+        </div>
+        <div matListItemLine class="notification-meta">
+          <span class="sender">{{ n.senderName || '-' }}</span>
+          <span class="separator mx-1">·</span>
+          <span class="time">{{ n.createdOn ? (n.createdOn | date:'short') : '-' }}</span>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div class="no-notifications text-center py-4" *ngIf="!loading && notifications.length === 0">
+    <mat-icon class="empty-icon">notifications_off</mat-icon>
+    <p class="text-muted mt-2">{{ "notification.empty" | translate }}</p>
+  </div>
+
+  <div class="loading-state text-center py-4" *ngIf="loading">
+    <p class="text-muted">{{ "notification.loading" | translate }}</p>
+  </div>
+</div>

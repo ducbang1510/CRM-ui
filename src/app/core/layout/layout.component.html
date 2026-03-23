@@ -5,6 +5,27 @@
   <div class="logo d-flex align-items-center justify-content-center">
     <mat-icon svgIcon="crm"></mat-icon>
   </div>
+  <span class="flex-grow-1"></span>
+
+  <!-- Notification bell -->
+  <div class="me-2">
+    <button mat-button [matMenuTriggerFor]="notificationMenu" [id]="HOME_ID.BUTTON_NOTIFICATIONS" (menuOpened)="onNotificationPanelOpened()">
+      <mat-icon
+        [matBadge]="unreadCount"
+        matBadgeColor="warn"
+        matBadgeSize="small"
+        [matBadgeHidden]="unreadCount === 0"
+      >
+        notifications
+      </mat-icon>
+    </button>
+    <mat-menu #notificationMenu="matMenu" class="notification-menu">
+      <div (click)="$event.stopPropagation()">
+        <app-notification-panel></app-notification-panel>
+      </div>
+    </mat-menu>
+  </div>
+
   <div>
     <button mat-button [matMenuTriggerFor]="menu" [id]="HOME_ID.BUTTON_MENU">
       <mat-icon> menu </mat-icon>
@@ -81,6 +102,45 @@
         {{ "salesOrder.title" | translate }}
       </span>
     </button>
+    <button
+      mat-button
+      [id]="HOME_ID.MENU_PRODUCTS"
+      class="menu-button w-100 py-1 ps-4 d-flex justify-content-start"
+      routerLink="/product"
+      routerLinkActive="active"
+    >
+      <mat-icon> inventory_2 </mat-icon>
+      <span>
+        {{ "product.title" | translate }}
+      </span>
+    </button>
+
+    <button
+      mat-button
+      [id]="HOME_ID.MENU_TASKS"
+      class="menu-button w-100 py-1 ps-4 d-flex justify-content-start"
+      routerLink="/task"
+      routerLinkActive="active"
+    >
+      <mat-icon> task_alt </mat-icon>
+      <span>
+        {{ "task.title" | translate }}
+      </span>
+    </button>
+
+    <button
+      mat-button
+      [id]="HOME_ID.MENU_REPORTS"
+      class="menu-button w-100 py-1 ps-4 d-flex justify-content-start"
+      routerLink="/report"
+      routerLinkActive="active"
+      *ngIf="currentUser?.isAdmin"
+    >
+      <mat-icon> assessment </mat-icon>
+      <span>
+        {{ "report.title" | translate }}
+      </span>
+    </button>
 
     <button
       mat-button
@@ -103,3 +163,5 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+<app-ai-chat-widget></app-ai-chat-widget>

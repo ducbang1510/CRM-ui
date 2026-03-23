@@ -115,6 +115,19 @@ export class UserService {
       .pipe(takeUntil(this.stop$));
   }
 
+  changeUserPassword(
+    oldPassword: string,
+    newPassword: string
+  ): Observable<any> {
+    return this.endpointService
+      .updateEndpoint(
+        ENDPOINTS.user.user,
+        [],
+        { oldPassword, newPassword }
+      )
+      .pipe(takeUntil(this.stop$));
+  }
+
   // stop subcriptions
   stop() {
     this.stop$.next();
